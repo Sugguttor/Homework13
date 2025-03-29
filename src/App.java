@@ -6,6 +6,6 @@ public class App {
 
         Book book = new Book("Anna Karenina", author, 1875);
         Book secondBook = new Book("DeathOfGods", secondAuthor, 1994);
-        book.setYearOfBook(1876);
+        book.setYear(1876);
     }
 }

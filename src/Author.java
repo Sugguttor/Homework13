@@ -1,36 +1,37 @@
 import java.util.Objects;
 
 public class Author {
-    String nameOfAuthor;
-    String surnameOfAuthor;
+    String name;
+    String surname;
 
-    public Author(String nameOfAuthor, String surnameOfAuthor) {
-        this.nameOfAuthor = nameOfAuthor;
-        this.surnameOfAuthor = surnameOfAuthor;
+    public Author(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
 
-    public String getNameOfAuthor() {
-        return this.nameOfAuthor;
+    public String getName() {
+        return this.name;
     }
 
-    public String getSurnameOfAuthor() {
-        return this.surnameOfAuthor;
+    public String getSurname() {
+        return this.surname;
     }
 
+    @Override
     public String toString() {
-        return nameOfAuthor + " " + surnameOfAuthor;
+        return name + " " + surname;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
-        return Objects.equals(nameOfAuthor, author.nameOfAuthor) && Objects.equals(surnameOfAuthor, author.surnameOfAuthor);
+        return Objects.equals(name, author.name) && Objects.equals(surname, author.surname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameOfAuthor, surnameOfAuthor);
+        return Objects.hash(name, surname);
 
     }
 }

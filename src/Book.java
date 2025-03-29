@@ -2,46 +2,47 @@ import java.util.Objects;
 
 public class Book {
 
-    String nameOfBook;
-    Author authorOfBook;
-    int yearOfBook;
+    String title;
+    Author author;
+    int year;
 
-    public Book(String nameOfBook, Author authorOfBook, int yearOfBook) {
-        this.nameOfBook = nameOfBook;
-        this.authorOfBook = authorOfBook;
-        this.yearOfBook = yearOfBook;
+    public Book(String title, Author author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
     }
 
+    public String getTitle() {
+        return this.title;
+    }
+
+    public Author getAuthor() {
+        return this.author;
+    }
+
+    public int getYear() {
+        return this.year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    @Override
     public String toString() {
-        return nameOfBook + " " + authorOfBook + " " + yearOfBook;
-    }
-
-    public String getNameOfBook() {
-        return this.nameOfBook;
-    }
-
-    public Author getAuthorOfBook() {
-        return this.authorOfBook;
-    }
-
-    public int getYearOfBook() {
-        return this.yearOfBook;
-    }
-
-    public void setYearOfBook(int yearOfBook) {
-        this.yearOfBook = yearOfBook;
+        return title + " " + author + " " + year;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return yearOfBook == book.yearOfBook && Objects.equals(nameOfBook, book.nameOfBook) && Objects.equals(authorOfBook, book.authorOfBook);
+        return year == book.year && Objects.equals(title, book.title) && Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameOfBook, authorOfBook, yearOfBook);
+        return Objects.hash(title, author, year);
 
     }
 }
